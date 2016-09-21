@@ -20,35 +20,43 @@ class DecisionTree
   private
 
   def after_age_question
+    a = ANSWERS.fetch(:age)
+
     case answer
-    when "< 18"
+    when a.fetch(:less_than_18)
       goto_question :income
-    when "18 - 35"
+    when a.fetch(:eighteen_to_35)
       endpoint "young adult"
-    when "36 - 55"
+    when a.fetch(:thirtysix_to_55)
       goto_question :marital_status
-    when "> 55"
+    when a.fetch(:over_55)
       endpoint "pensioner"
     end
   end
 
   def after_income_question
+    i = ANSWERS.fetch(:income)
+
     case answer
-    when "high"
+    when i.fetch(:high)
       endpoint "rich kid"
-    when "low"
+    when i.fetch(:low)
       endpoint "poor kid"
     end
   end
 
   def after_marital_status_question
+    m = ANSWERS.fetch(:marital_status)
+
     case answer
-    when "single"
+    when m.fetch(:single)
       endpoint "single adult"
-    when "married"
+    when m.fetch(:married)
       endpoint "married adult"
     end
   end
+
+  #----------------------
 
   def goto_question(q)
     url_for host: "localhost:3000", action: :edit, controller: [q, "_question"].join, id: @object

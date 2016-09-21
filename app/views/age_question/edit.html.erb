@@ -1,10 +1,27 @@
 <h1>How old are you?</h1>
 
 <%= form_for @person, url: {controller: :age_question, action: :update} do |f| %>
-  <%= f.radio_button :age, "< 18" %> <%= f.label :age__18, "< 18" %> <br />
-  <%= f.radio_button :age, "18 - 35" %> <%= f.label :'age_18_-_35', "18 - 35" %> <br />
-  <%= f.radio_button :age, "36 - 55" %> <%= f.label :'age_36_-_55', "36 - 55" %> <br />
-  <%= f.radio_button :age, "> 55" %> <%= f.label :age__55, "> 55" %> <br />
+  <% a = ANSWERS.fetch(:age) %>
+  <label>
+    <%= f.radio_button :age, a.fetch(:less_than_18) %>
+    Less than eighteen
+  </label><br />
+
+  <label>
+    <%= f.radio_button :age, a.fetch(:eighteen_to_35) %>
+    18 to 35
+  </label><br />
+
+  <label>
+    <%= f.radio_button :age, a.fetch(:thirtysix_to_55) %>
+    36 to 55
+  </label><br />
+
+  <label>
+    <%= f.radio_button :age, a.fetch(:over_55) %>
+    over 55
+  </label><br />
+
   <%= f.submit %>
 <% end %>
 

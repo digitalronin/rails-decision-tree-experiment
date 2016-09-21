@@ -1,8 +1,9 @@
 <h1>What is your income?</h1>
 
 <%= form_for @person, url: {controller: :income_question, action: :update} do |f| %>
-  <%= f.radio_button :income, "low" %> <%= f.label :income_low, "Low" %> <br />
-  <%= f.radio_button :income, "high" %> <%= f.label :income_high, "High" %> <br />
+  <% i = ANSWERS.fetch(:income) %>
+  <%= f.radio_button :income, i.fetch(:low) %> <%= f.label :income_low, "Low" %> <br />
+  <%= f.radio_button :income, i.fetch(:high) %> <%= f.label :income_high, "High" %> <br />
   <%= f.submit %>
 <% end %>
 
