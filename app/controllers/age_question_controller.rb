@@ -4,7 +4,7 @@ class AgeQuestionController < ApplicationController
   end
 
   def update
-    @age_question = Person.find params[:id]
-    @age_question.update params.fetch(:person).permit(:age)
+    person = Person.find params[:id]
+    person.update params.fetch(:person).permit(:age)
   end
 end

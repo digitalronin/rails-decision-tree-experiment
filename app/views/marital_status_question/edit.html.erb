@@ -1,0 +1,8 @@
+<h1>What is your marital status</h1>
+
+<%= form_for @marital_status_question, url: {controller: :marital_status_question, action: :update} do |f| %>
+  <%= f.radio_button :marital_status, "married" %> <%= f.label :marital_status_married, "Married" %> <br />
+  <%= f.radio_button :marital_status, "single" %> <%= f.label :marital_status_single, "Single" %> <br />
+  <%= f.submit %>
+<% end %>
+

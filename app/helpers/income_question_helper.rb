@@ -1,0 +1,2 @@
+module IncomeQuestionHelper
+end
