@@ -5,6 +5,8 @@ class AgeQuestionController < ApplicationController
 
   def update
     person = Person.find params[:id]
-    person.update params.fetch(:person).permit(:age)
+    step = params.fetch(:person).permit(:age)
+    person.update step
+    redirect_to DecisionTree.new(object: person, step: step).next
   end
 end
