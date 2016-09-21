@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Experiment in modelling decision trees
 
-Things you may want to cover:
+See doc/initial-decision-tree.png for the initial decision tree being modeled
 
-* Ruby version
+# Design Goals
 
-* System dependencies
+* The decision tree is encapsulated in a single file which is easy to understand and modify
 
-* Configuration
+* Each question is contained in a single ERB template, easy to find and modify
 
-* Database creation
+* Adding new questions is straightforward
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Provided these goals are acheived, I don't care if the code is a bit clunky
