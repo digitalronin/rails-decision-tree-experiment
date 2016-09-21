@@ -5,6 +5,8 @@ class MaritalStatusQuestionController < ApplicationController
 
   def update
     person = Person.find params[:id]
-    person.update params.fetch(:person).permit(:marital_status)
+    step = params.fetch(:person).permit(:marital_status)
+    person.update step
+    redirect_to DecisionTree.new(object: person, step: step).next
   end
 end

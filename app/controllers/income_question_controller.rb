@@ -5,6 +5,8 @@ class IncomeQuestionController < ApplicationController
 
   def update
     person = Person.find params[:id]
-    person.update params.fetch(:person).permit(:income)
+    step = params.fetch(:person).permit(:income)
+    person.update step
+    redirect_to DecisionTree.new(object: person, step: step).next
   end
 end

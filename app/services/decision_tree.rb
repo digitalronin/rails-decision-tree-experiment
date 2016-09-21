@@ -10,6 +10,10 @@ class DecisionTree
     case question
     when "age"
       after_age
+    when "income"
+      after_income
+    when "marital_status"
+      after_marital_status
     end
   end
 
@@ -25,6 +29,24 @@ class DecisionTree
       edit_marital_status_question_path(@object)
     when "> 55"
       decision_path("pensioner")
+    end
+  end
+
+  def after_income
+    case answer
+    when "high"
+      decision_path("rich kid")
+    when "low"
+      decision_path("poor kid")
+    end
+  end
+
+  def after_marital_status
+    case answer
+    when "single"
+      decision_path "single adult"
+    when "married"
+      decision_path "married adult"
     end
   end
 
