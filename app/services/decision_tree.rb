@@ -22,11 +22,11 @@ class DecisionTree
   def after_age_question
     case answer
     when "< 18"
-      edit_income_question_path(@object)
+      goto_question :income
     when "18 - 35"
       endpoint "young adult"
     when "36 - 55"
-      edit_marital_status_question_path(@object)
+      goto_question :marital_status
     when "> 55"
       endpoint "pensioner"
     end
@@ -35,7 +35,7 @@ class DecisionTree
   def after_income_question
     case answer
     when "high"
-      endpoint"rich kid"
+      endpoint "rich kid"
     when "low"
       endpoint "poor kid"
     end
@@ -48,6 +48,10 @@ class DecisionTree
     when "married"
       endpoint "married adult"
     end
+  end
+
+  def goto_question(q)
+    url_for host: "localhost:3000", action: :edit, controller: [q, "_question"].join, id: @object
   end
 
   def endpoint(str)
