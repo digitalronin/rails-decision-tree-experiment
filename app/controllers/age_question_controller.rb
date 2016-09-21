@@ -1,6 +1,6 @@
 class AgeQuestionController < ApplicationController
   def edit
-    @age_question = Person.find params[:id]
+    @person = Person.find params[:id]
   end
 
   def update
