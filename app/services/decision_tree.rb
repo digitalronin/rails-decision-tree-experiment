@@ -7,12 +7,12 @@ class DecisionTree
   end
 
   def next
-    case question
-    when "age"
+    case question.to_sym
+    when :age
       after_age_question
-    when "income"
+    when :income
       after_income_question
-    when "marital_status"
+    when :marital_status
       after_marital_status_question
     end
   end
