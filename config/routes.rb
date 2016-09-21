@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   resources :age_question
   resources :marital_status_question
   resources :income_question
+  resources :decision
 end
