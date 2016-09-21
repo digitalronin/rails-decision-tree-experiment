@@ -9,45 +9,49 @@ class DecisionTree
   def next
     case question
     when "age"
-      after_age
+      after_age_question
     when "income"
-      after_income
+      after_income_question
     when "marital_status"
-      after_marital_status
+      after_marital_status_question
     end
   end
 
   private
 
-  def after_age
+  def after_age_question
     case answer
     when "< 18"
       edit_income_question_path(@object)
     when "18 - 35"
-      decision_path("young adult")
+      endpoint "young adult"
     when "36 - 55"
       edit_marital_status_question_path(@object)
     when "> 55"
-      decision_path("pensioner")
+      endpoint "pensioner"
     end
   end
 
-  def after_income
+  def after_income_question
     case answer
     when "high"
-      decision_path("rich kid")
+      endpoint"rich kid"
     when "low"
-      decision_path("poor kid")
+      endpoint "poor kid"
     end
   end
 
-  def after_marital_status
+  def after_marital_status_question
     case answer
     when "single"
-      decision_path "single adult"
+      endpoint "single adult"
     when "married"
-      decision_path "married adult"
+      endpoint "married adult"
     end
+  end
+
+  def endpoint(str)
+    decision_path str
   end
 
   def question
