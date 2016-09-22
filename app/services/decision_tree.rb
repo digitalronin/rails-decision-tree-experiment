@@ -59,7 +59,7 @@ class DecisionTree
   #----------------------
 
   def goto_question(q)
-    url_for host: "localhost:3000", action: :edit, controller: [q, "_question"].join, id: @object
+    url_for host: "localhost:3000", action: :edit, controller: ["questions/", q, "_question"].join, id: @object
   end
 
   def endpoint(str)
