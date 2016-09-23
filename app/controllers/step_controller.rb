@@ -14,7 +14,7 @@ class StepController < ApplicationController
 
     person.update hash
 
-    # if we are reusing a question (e.g. income, income2, income3)
+    # if we are reusing a step (e.g. income, income2, income3)
     # we need to rename the 'income' attribute to 'income2' (or whatever) for the
     # DecisionTree#destination call
     # i.e. { income: "high" } -> { income2: "high" }
