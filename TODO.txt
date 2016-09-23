@@ -1,8 +1,6 @@
 - use a question multiple times
   re-use the template. override the controller
 
-- rename QuestionController to StepController
-
 - rename DecisionTree#next to DecisionTree#next_step
 
 - rename next_step to next_destination (or something)

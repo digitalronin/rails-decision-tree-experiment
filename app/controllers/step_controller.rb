@@ -1,4 +1,4 @@
-class QuestionController < ApplicationController
+class StepController < ApplicationController
   def edit
     @person = Person.find params[:id]
     @next_step = params[:next_step]
