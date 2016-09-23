@@ -1,6 +1,3 @@
-- implement 'check your answers'
-  override the next destination of a step
-
 - use a question multiple times
   re-use the template. override the controller
 
@@ -9,3 +6,5 @@
 - rename DecisionTree#next to DecisionTree#next_step
 
 - rename next_step to next_destination (or something)
+
+- create a separate classify stage (after check your answers)

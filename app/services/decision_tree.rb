@@ -5,9 +5,12 @@ class DecisionTree
   def initialize(params)
     @object = params.fetch(:object)
     @step = params.fetch(:step)
+    @next_step = params.fetch(:next_step, false)
   end
 
   def next
+    return @next_step if @next_step
+
     case question.to_sym
     when :age
       after_age_question

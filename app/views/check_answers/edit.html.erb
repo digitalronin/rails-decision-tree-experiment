@@ -1,1 +1,14 @@
 <h1>Check your answers</h1>
+
+<p>
+  Age: <%= @person.age %>
+  <%= link_to "[change]", step_path(:age, @person, next_step: edit_check_answer_path(@person)) %>
+</p>
+<p>
+  Income: <%= @person.income %>
+  <%= link_to "[change]", step_path(:income, @person, next_step: edit_check_answer_path(@person)) %>
+</p>
+<p>
+  Marital Status: <%= @person.marital_status %>
+  <%= link_to "[change]", step_path(:marital_status, @person, next_step: edit_check_answer_path(@person)) %>
+</p>
