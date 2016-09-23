@@ -12,5 +12,6 @@ Rails.application.routes.draw do
   end
 
   resources :start, only: [:show]
+  resources :check_answers, only: [:edit, :update]
   resources :decision
 end
