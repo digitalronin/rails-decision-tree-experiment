@@ -8,7 +8,7 @@ class DecisionTree
     @next_step = params.fetch(:next_step, false)
   end
 
-  def next
+  def destination
     return @next_step if @next_step
 
     case question.to_sym

@@ -11,6 +11,6 @@ class StepController < ApplicationController
     attr = params.fetch(:person).permit(sym)
     next_step = params[:next_step].blank? ? false : params[:next_step]
     person.update attr
-    redirect_to DecisionTree.new(object: person, step: attr, next_step: next_step).next
+    redirect_to DecisionTree.new(object: person, step: attr, next_step: next_step).destination
   end
 end
