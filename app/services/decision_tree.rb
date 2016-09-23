@@ -1,5 +1,6 @@
 class DecisionTree
   include Rails.application.routes.url_helpers
+  include ApplicationHelper
 
   def initialize(params)
     @object = params.fetch(:object)
