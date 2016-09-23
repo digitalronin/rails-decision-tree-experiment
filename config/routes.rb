@@ -3,9 +3,9 @@ Rails.application.routes.draw do
 
   namespace :steps do
     [
-      :age_question,
-      :marital_status_question,
-      :income_question
+      :age,
+      :marital_status,
+      :income
     ].each do |ctrlr|
       resources ctrlr, only: [:edit, :update]
     end
