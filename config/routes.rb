@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :start, only: [:show]
   resources :decision
 end
