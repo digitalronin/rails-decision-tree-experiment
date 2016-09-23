@@ -58,9 +58,8 @@ class DecisionTree
 
   #----------------------
 
-  def goto_question(q)
-    # TODO: remove hard-coded 'localhost:3000' - use request.host_with_port instead
-    url_for host: "localhost:3000", action: :edit, controller: ["steps/", q].join, id: @object
+  def goto_question(step)
+    step_path step, @object
   end
 
   def endpoint(str)
