@@ -1,5 +1,5 @@
 class StartController < ApplicationController
-  def show
-    @person = Person.find params[:id]
+  def index
+    @person = Person.first
   end
 end
