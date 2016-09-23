@@ -5,7 +5,9 @@ Rails.application.routes.draw do
     [
       :age,
       :marital_status,
-      :income
+      :income,
+      :income2,
+      :income3
     ].each do |ctrlr|
       resources ctrlr, only: [:edit, :update]
     end

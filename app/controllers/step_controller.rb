@@ -6,11 +6,20 @@ class StepController < ApplicationController
 
   private
 
-  def update_and_advance(sym)
+  def update_and_advance(attr, opts = {})
     person = Person.find params[:id]
-    attr = params.fetch(:person).permit(sym)
+
+    hash = params.fetch(:person).permit(attr)
     next_step = params[:next_step].blank? ? false : params[:next_step]
-    person.update attr
-    redirect_to DecisionTree.new(object: person, step: attr, next_step: next_step).destination
+
+    person.update hash
+
+    # if we are reusing a question (e.g. income, income2, income3)
+    # we need to rename the 'income' attribute to 'income2' (or whatever) for the
+    # DecisionTree#destination call
+    # i.e. { income: "high" } -> { income2: "high" }
+    hash = opts[:as] ? { opts[:as] => hash[attr] } : hash
+
+    redirect_to DecisionTree.new(object: person, step: hash, next_step: next_step).destination
   end
 end

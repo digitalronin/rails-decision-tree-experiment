@@ -16,6 +16,10 @@ class DecisionTree
       after_age_question
     when :income
       after_income_question
+    when :income2
+      after_income2_question
+    when :income3
+      after_income3_question
     when :marital_status
       after_marital_status_question
     end
@@ -54,9 +58,31 @@ class DecisionTree
 
     case answer
     when m.fetch(:single)
-      endpoint "single adult"
+      goto_question :income3
     when m.fetch(:married)
-      endpoint "married adult"
+      goto_question :income2
+    end
+  end
+
+  def after_income2_question
+    i = ANSWERS.fetch(:income)
+
+    case answer
+    when i.fetch(:high)
+      endpoint "rich married adult"
+    when i.fetch(:low)
+      endpoint "poor married adult"
+    end
+  end
+
+  def after_income3_question
+    i = ANSWERS.fetch(:income)
+
+    case answer
+    when i.fetch(:high)
+      endpoint "rich single adult"
+    when i.fetch(:low)
+      endpoint "poor single adult"
     end
   end
 

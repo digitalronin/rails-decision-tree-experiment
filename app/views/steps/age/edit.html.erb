@@ -1,6 +1,6 @@
 <h1>How old are you?</h1>
 
-<%= form_for @person, url: {controller: :age, action: :update} do |f| %>
+<%= form_for @person, url: {controller: controller.controller_path, action: :update} do |f| %>
   <%= hidden_field_tag :next_step, @next_step %>
 
   <% a = ANSWERS.fetch(:age) %>

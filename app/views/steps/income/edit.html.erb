@@ -1,6 +1,6 @@
 <h1>What is your income?</h1>
 
-<%= form_for @person, url: {controller: :income, action: :update} do |f| %>
+<%= form_for @person, url: {controller: controller.controller_path, action: :update} do |f| %>
   <%= hidden_field_tag :next_step, @next_step %>
 
   <% i = ANSWERS.fetch(:income) %>
