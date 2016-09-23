@@ -1,8 +1,6 @@
 <h1>What is your marital status?</h1>
 
-<%= form_for @person, url: {controller: controller.controller_path, action: :update} do |f| %>
-  <%= hidden_field_tag :next_step, @next_step %>
-
+<%= step_form @person do |f| %>
   <% m = ANSWERS.fetch(:marital_status) %>
   <%= f.radio_button :marital_status, m.fetch(:married) %> <%= f.label :marital_status_married, "Married" %> <br />
   <%= f.radio_button :marital_status, m.fetch(:single) %> <%= f.label :marital_status_single, "Single" %> <br />
