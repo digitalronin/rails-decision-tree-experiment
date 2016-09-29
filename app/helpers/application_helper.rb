@@ -3,18 +3,6 @@ module ApplicationHelper
   # controller, with a hidden field for any 'next_step' that was passed in
   def step_form(record, options = {}, &block)
     opts = {
-      url: { controller: controller.controller_path, action: :update }
-    }.merge(options)
-
-    form_for record, opts do |f|
-      hidden_field_tag(:next_step, @next_step) + capture { yield f }
-    end
-  end
-
-  # Render a form_for tag pointing to the update action of the current
-  # controller, with a hidden field for any 'next_step' that was passed in
-  def step_form2(record, options = {}, &block)
-    opts = {
       url: { controller: controller.controller_path, action: :update },
       method: :put,
       as: :form_object

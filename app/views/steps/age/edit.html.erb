@@ -1,6 +1,6 @@
 <h1>How old are you?</h1>
 
-<%= step_form2 @form_object do |f| %>
+<%= step_form @form_object do |f| %>
   <% a = ANSWERS.fetch(:age) %>
   <label>
     <%= f.radio_button :age, a.fetch(:less_than_18) %>

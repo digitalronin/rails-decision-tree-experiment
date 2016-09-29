@@ -1,6 +1,6 @@
 <h1>What is your marital status?</h1>
 
-<%= step_form @person do |f| %>
+<%= step_form @form_object do |f| %>
   <% m = ANSWERS.fetch(:marital_status) %>
   <%= f.radio_button :marital_status, m.fetch(:married) %> <%= f.label :marital_status_married, "Married" %> <br />
   <%= f.radio_button :marital_status, m.fetch(:single) %> <%= f.label :marital_status_single, "Single" %> <br />

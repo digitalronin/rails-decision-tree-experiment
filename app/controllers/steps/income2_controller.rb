@@ -1,10 +1,11 @@
 class Steps::Income2Controller < StepController
   def edit
     super
+    @form_object = IncomeForm.new person: @person, income: @person.income
     render "steps/income/edit"
   end
 
   def update
-    update_and_advance :income, as: :income2
+    update_and_advance2 :income, IncomeForm, as: :income2
   end
 end
