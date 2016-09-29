@@ -1,24 +1,6 @@
-class MaritalStatusForm
-  include Virtus.model
-  include ActiveModel::Validations
-
+class MaritalStatusForm < BaseForm
   attribute :marital_status, String
   validates :marital_status, presence: true
-
-  attr_accessor :person
-
-  def save
-    if valid?
-      persist!
-      true
-    else
-      false
-    end
-  end
-
-  def persisted?
-    false
-  end
 
   private
 

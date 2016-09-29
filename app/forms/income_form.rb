@@ -1,24 +1,6 @@
-class IncomeForm
-  include Virtus.model
-  include ActiveModel::Validations
-
+class IncomeForm < BaseForm
   attribute :income, String
   validates :income, presence: true
-
-  attr_accessor :person
-
-  def save
-    if valid?
-      persist!
-      true
-    else
-      false
-    end
-  end
-
-  def persisted?
-    false
-  end
 
   private
 
