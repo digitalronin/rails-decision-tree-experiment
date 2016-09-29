@@ -13,6 +13,8 @@ module ApplicationHelper
     end
   end
 
+  # Helper method to enable redirecting/linking to a specific step (node) in the
+  # decision tree
   def step_path(step, object, opts = {})
     params = {
       # TODO: remove hard-coded 'localhost:3000' - use request.host_with_port instead
