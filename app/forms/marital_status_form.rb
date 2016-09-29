@@ -1,8 +1,5 @@
 class MaritalStatusForm
-  include Virtus
-
-  extend ActiveModel::Naming
-  include ActiveModel::Conversion
+  include Virtus.model
   include ActiveModel::Validations
 
   attribute :marital_status, String

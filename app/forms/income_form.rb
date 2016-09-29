@@ -1,8 +1,5 @@
 class IncomeForm
-  include Virtus
-
-  extend ActiveModel::Naming
-  include ActiveModel::Conversion
+  include Virtus.model
   include ActiveModel::Validations
 
   attribute :income, String
