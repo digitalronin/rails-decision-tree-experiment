@@ -9,6 +9,8 @@ See doc/initial-decision-tree.png for the initial decision tree being modeled
 * The decision tree is encapsulated in a single file which is easy to understand and modify
 * Each step is contained in a single ERB template, easy to find and modify
 * Adding new steps is straightforward
+* Simplicity and maintainability over elegance and cleverness
+* Minimal 'magic' (avoid custom DSLs & gem dependencies, as much as is sensible)
 
 Provided these goals are acheived, I don't care if the code is a bit clunky
 

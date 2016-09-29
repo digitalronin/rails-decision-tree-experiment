@@ -1,1 +1,7 @@
+- validations using form objects (question must be answered)
+
 - create a separate classify stage (after check your answers)
+
+- spike saving multiple attributes in a step (e.g. name & address)
+
+- use show instead of edit, to show the form?
