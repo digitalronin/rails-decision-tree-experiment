@@ -25,6 +25,7 @@ This experiment assumes the following;
 For every step, you need a unique identifier. Assuming we have a step called 'age', you need to do the following;
 
 * List the step in the config/routes.rb
+* Create a form class in app/forms/
 * Add the step's answers to config/initializers/answers.rb
 * Create `app/controllers/steps/age_controller.rb`
 * Create `app/views/steps/age/edit.html.erb`
