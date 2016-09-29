@@ -1,5 +1,9 @@
 <h1>How old are you?</h1>
 
+<% @form_object.errors.each do |field, message| %>
+  <p> <%= field %> <%= message %> </p>
+<% end %>
+
 <%= step_form @form_object do |f| %>
   <% a = ANSWERS.fetch(:age) %>
   <label>

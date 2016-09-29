@@ -1,5 +1,9 @@
 <h1>What is your income?</h1>
 
+<% @form_object.errors.each do |field, message| %>
+  <p> <%= field %> <%= message %> </p>
+<% end %>
+
 <%= step_form @form_object do |f| %>
   <% i = ANSWERS.fetch(:income) %>
   <%= f.radio_button :income, i.fetch(:low) %> <%= f.label :income_low, "Low" %> <br />
