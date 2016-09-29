@@ -1,8 +1,6 @@
 <h1>How old are you?</h1>
 
-<%= form_for @age_form, url: { controller: controller.controller_path, action: :update }, method: :put do |f| %>
-  <%= hidden_field_tag :next_step, @next_step %>
-
+<%= step_form2 @form_object do |f| %>
   <% a = ANSWERS.fetch(:age) %>
   <label>
     <%= f.radio_button :age, a.fetch(:less_than_18) %>
