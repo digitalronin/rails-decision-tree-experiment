@@ -16,4 +16,10 @@ class BaseForm
   def persisted?
     false
   end
+
+  private
+
+  def persist!
+    raise "BaseForm#persist! was called. This should be overridden in the subclass"
+  end
 end
