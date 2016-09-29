@@ -5,7 +5,7 @@ class DecisionTree
   def initialize(params)
     @object = params.fetch(:object)
     @step = params.fetch(:step)
-    @next_step = params.fetch(:next_step, false)
+    @next_step = params.fetch(:next_step, nil)
   end
 
   def destination
