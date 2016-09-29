@@ -5,6 +5,6 @@ class Steps::IncomeController < StepController
   end
 
   def update
-    update_and_advance2 :income, IncomeForm
+    update_and_advance :income, IncomeForm
   end
 end

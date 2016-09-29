@@ -5,6 +5,6 @@ class Steps::AgeController < StepController
   end
 
   def update
-    update_and_advance2 :age, AgeForm
+    update_and_advance :age, AgeForm
   end
 end

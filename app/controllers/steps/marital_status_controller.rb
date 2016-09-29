@@ -5,6 +5,6 @@ class Steps::MaritalStatusController < StepController
   end
 
   def update
-    update_and_advance2 :marital_status, MaritalStatusForm
+    update_and_advance :marital_status, MaritalStatusForm
   end
 end
